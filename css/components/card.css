@@ -1,0 +1,259 @@
+/* ========== متغیرهای رنگ ========== */
+:root {
+  --primary-color: #cc312d;
+  --secondary-text-color: #606060;
+  --text-color: #1a1814;
+  --white-color: #ffffff;
+  --bg-color: #ffffff;
+  --badge-overlay: rgba(0, 0, 0, 0.2);
+}
+
+/* ========== متغیرهای فاصله و اندازه ========== */
+:root {
+  /* Border Radius */
+  --border-radius-sm: 1.6rem;
+  --border-radius-md: 2.4rem;
+  --border-radius-lg: 3rem;
+
+  /* Spacing */
+  --spacing-xs: 0.4rem;
+  --spacing-sm: 0.8rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.2rem;
+  --spacing-xl: 1.5rem;
+  --spacing-2xl: 2.4rem;
+
+  /* Font Sizes */
+  --font-size-sm: 1.2rem;
+  --font-size-md: 1.4rem;
+  --font-size-lg: 1.6rem;
+
+  /* Line Heights */
+  --line-height-100: 100%;
+  --line-height-150: 150%;
+  --line-height-180: 180%;
+  --line-height-md: 2.4rem;
+  --line-height-lg: 3.5rem;
+}
+
+/* ========== متغیرهای کارت (موبایل) ========== */
+:root {
+  --card-width: 31.7rem;
+  --card-height: 32.8rem;
+  --card-content-width: 29.3rem;
+
+  --card-image-height: 19.6rem;
+  --card-description-height: 10rem;
+  --card-footer-height: 4rem;
+
+  --card-badge-width: 9.1rem;
+  --card-badge-height: 3.2rem;
+  --card-badge-dot-size: 1rem;
+  --card-badge-content-width: 7.7rem;
+
+  --card-link-width: 11.1rem;
+  --icon-container-size: 2.4rem;
+  --icon-width: 1.7rem;
+  --icon-height: 1.3rem;
+
+  --aspect-ratio-mobile: 3/2;
+}
+
+/* ========== Article ========== */
+article {
+  width: var(--card-width);
+  height: var(--card-height);
+  border-radius: var(--border-radius-md);
+  background-color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+/* ========== Image ========== */
+.card__image {
+  width: var(--card-content-width);
+  height: var(--card-image-height);
+  position: relative;
+}
+
+.card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: var(--aspect-ratio-mobile);
+  border-radius: var(--border-radius-sm);
+}
+
+/* ========== Badge ========== */
+.card__badge {
+  width: var(--card-badge-width);
+  height: var(--card-badge-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  z-index: 10;
+}
+
+.badge__icon {
+  width: var(--card-badge-dot-size);
+  height: var(--card-badge-dot-size);
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+.badge__content {
+  width: var(--card-badge-content-width);
+  height: var(--card-badge-height);
+  border-radius: var(--border-radius-lg);
+  background-color: var(--badge-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__badge p {
+  color: var(--bg-color);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-100);
+}
+
+/* ========== Description ========== */
+.card__description {
+  width: var(--card-content-width);
+  height: var(--card-description-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: var(--spacing-lg);
+}
+
+.card__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: var(--spacing-xs);
+}
+
+.card__header--h1 {
+  font-weight: 600;
+  font-size: var(--font-size-md);
+  color: var(--text-color);
+}
+
+.card__header--h3 {
+  font-weight: 400;
+  font-size: var(--font-size-sm);
+  color: var(--secondary-text-color);
+}
+
+/* ========== Footer ========== */
+.card__footer {
+  width: var(--card-content-width);
+  height: var(--card-footer-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__date {
+  font-weight: 400;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-180);
+  color: var(--secondary-text-color);
+}
+
+.card__link {
+  width: var(--card-link-width);
+  height: var(--card-footer-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-xs);
+  text-decoration: none;
+}
+
+.card__continue {
+  font-weight: 400;
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-md);
+  color: var(--primary-color);
+}
+
+.icon__container {
+  width: var(--icon-container-size);
+  height: var(--icon-container-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon__container > .icon {
+  width: var(--icon-width);
+  height: var(--icon-height);
+}
+
+/* ========== Desktop (بالای 1025px) ========== */
+@media (min-width: 1025px) {
+  :root {
+    --card-width-desktop: 30rem;
+    --card-height-desktop: 40.7rem;
+    --card-content-width-desktop: 27rem;
+    --card-image-height-desktop: 24rem;
+    --card-description-height-desktop: 12.7rem;
+    --card-header-h1-height: 3.5rem;
+    --card-header-h3-height: 2.4rem;
+    --aspect-ratio-desktop: 3/4;
+  }
+
+  article {
+    width: var(--card-width-desktop);
+    height: var(--card-height-desktop);
+    padding: var(--spacing-xl);
+    gap: var(--spacing-md);
+  }
+
+  .card__image {
+    width: var(--card-content-width-desktop);
+    height: var(--card-image-height-desktop);
+  }
+
+  .card__image img {
+    aspect-ratio: var(--aspect-ratio-desktop);
+  }
+
+  .card__description {
+    width: var(--card-content-width-desktop);
+    height: var(--card-description-height-desktop);
+    gap: var(--spacing-2xl);
+  }
+
+  .card__header--h1 {
+    width: var(--card-content-width-desktop);
+    height: var(--card-header-h1-height);
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-lg);
+  }
+
+  .card__header--h3 {
+    width: var(--card-content-width-desktop);
+    height: var(--card-header-h3-height);
+  }
+
+  .card__footer {
+    width: var(--card-content-width-desktop);
+  }
+
+  .card__link {
+    gap: var(--spacing-sm);
+  }
+}

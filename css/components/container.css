@@ -1,0 +1,87 @@
+/* تعریف متغیرهای CSS */
+:root {
+  /* Breakpoints */
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+
+  /* Container Widths - Mobile */
+  --container-max-width: 366px;
+  --header-max-width: 313px;
+  --grid-max-width: 313px;
+
+  /* Spacing */
+  --container-padding: 20px;
+  --container-gap: 20px;
+  --grid-gap: 16px;
+  --grid-column-gap: 16px;
+  --grid-row-gap: 16px;
+
+  /* Heights */
+  --header-height: 72px;
+  --card-height: 328px;
+
+  /* Grid Layout */
+  --grid-columns: 1;
+}
+
+/* Tablet Variables */
+@media screen and (min-width: 768px) {
+  :root {
+    --container-max-width: 800px;
+    --header-max-width: 100%;
+    --grid-max-width: 100%;
+    --grid-gap: 20px;
+    --grid-column-gap: 20px;
+    --grid-row-gap: 20px;
+    --grid-columns: 2;
+  }
+}
+
+/* Desktop Variables */
+@media screen and (min-width: 1024px) {
+  :root {
+    --container-max-width: 1200px;
+    --grid-column-gap: 40px;
+    --grid-row-gap: 40px;
+    --card-height: 407px;
+    --grid-columns: 3;
+  }
+}
+
+/* استفاده از متغیرها */
+.flex__container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--container-gap);
+  padding: var(--container-padding);
+}
+
+.header__container {
+  width: 100%;
+  max-width: var(--header-max-width);
+  height: var(--header-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid__container {
+  width: 100%;
+  max-width: var(--grid-max-width);
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  column-gap: var(--grid-column-gap);
+  row-gap: var(--grid-row-gap);
+}
+
+.grid__container .container__card {
+  width: 100%;
+  height: var(--card-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
